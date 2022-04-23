@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'task-manager-angular';
+  
+  constructor(private authSvc: AuthService) {}
+
+  get currentUser(): any {
+    return this.authSvc.currentUser
+  }
 }
