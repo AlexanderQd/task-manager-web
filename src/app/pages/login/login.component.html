@@ -2,10 +2,10 @@
   <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
 
     <form class="login-container" [formGroup]="form" novalidate (ngSubmit)="onSubmit()" (keydown.enter)="onSubmit()">
-      <app-input type="email" formControlName="email" placeholder="Correo electronico" label="Correo electronico"
-        [submitted]="submitted" labelClass="label"></app-input>
-      <app-input type="password" formControlName="password" placeholder="Contraseña" label="Contraseña"
-        [submitted]="submitted" labelClass="label"></app-input>
+      <app-input type="email" formControlName="email" labelTxt="Correo electronico"
+        [submitted]="submitted"></app-input>
+      <app-input type="password" formControlName="password" labelTxt="Contraseña"
+        [submitted]="submitted"></app-input>
       <button type="submit" class="btn mt-4 w-100">Entrar</button>
     </form>
 

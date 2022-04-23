@@ -1,5 +1,6 @@
-<div class="mt-2">
-  <label *ngIf="label">{{label}}</label>
-  <input [type]="type" class="form-control" aria-describedby="textHelp" [placeholder]="placeholder"
+
+<div class="">
+  <label class="mb0" [ngStyle]="labelStyle">{{ labelTxt }}</label>
+  <input [type]="type" class="form-control mt-1" aria-describedby="textHelp" [placeholder]="placeholder ? placeholder : labelTxt"
   [class.is-invalid]="submitted && invalid" (input)="changeText($event)" [value]="currentValue" [disabled]="disabled"/>
 </div>

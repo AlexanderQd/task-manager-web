@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from '@services';
 
 @Component({
   selector: 'app-login',
@@ -19,16 +19,14 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('entra')
     this.submitted = true
     if (this.form.invalid) {
       this.form.markAllAsTouched()
       return;
     }
 
-    const {email, password} = this.form.getRawValue()
-    this.authSvc.login(email, password)
-    this.router.navigate(['/home'])
+    const { email, password } = this.form.getRawValue()
+    this.login(email, password)
   }
 
   private buildForm(): void {
@@ -36,5 +34,14 @@ export class LoginComponent implements OnInit {
       email: [undefined, [Validators.required, Validators.email]],
       password: [undefined, Validators.required]
     })
+  }
+
+  private async login(email: string, password: string): Promise<void> {
+    try {
+      await this.authSvc.login(email, password)
+      this.router.navigate(['/home'])
+    } catch (e) {
+      console.error(e)
+    }
   }
 }

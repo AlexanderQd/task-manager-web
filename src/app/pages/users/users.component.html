@@ -1,1 +1,3 @@
-<p>users works!</p>
+<button mat-raised-button color="primary" (click)="openForm()">Nuevo usuario</button>
+<app-users-table [users]="users" (editUser)="openForm($event)"></app-users-table>
+<app-user-form (userResult)="insertUser($event)"></app-user-form>

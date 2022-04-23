@@ -1,0 +1,42 @@
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Activo</th>
+      <th>Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{ user.active ? 'Sí' : 'No'}}</td>
+      <td>
+        <div class="col-12">
+          <div class="nav-item dropdown" ngbDropdown>
+            <a class="btn btn-medium-state-blue btn-sm" ngbDropdownToggle>
+              Selecciona acción
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="admin" ngbDropdownMenu>
+              <button class="btn btn-sm dropdown-item" (click)="setUser(user)">
+                <i class="fa fa-edit text-primary"></i>
+                Editar
+              </button>
+
+              <button class="btn btn-sm dropdown-item" (click)="toggleActive(user)">
+                <i class="fa fa-trash text-danger"></i>
+                {{ user.active ? 'Desactivar' : 'Activar' }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

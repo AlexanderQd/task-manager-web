@@ -1,30 +1,30 @@
-import {Component, Input, Self, Optional} from '@angular/core';
-import {ControlValueAccessor, NgControl} from '@angular/forms';
-
+import { Component, Input, Optional, Self } from '@angular/core';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss']
+  selector: 'app-select',
+  templateUrl: './select.component.html',
+  styleUrls: ['./select.component.scss']
 })
-export class InputComponent implements ControlValueAccessor  {
+export class SelectComponent implements ControlValueAccessor {
   @Input() labelTxt!: string
-  @Input() placeholder?: string
-  @Input() type: string = 'text'
-  @Input() labelStyle?: any
+  @Input() placeholder: string = ''
+  @Input() bindValue!: string
+  @Input() bindLabel!: string
+  @Input() multiple: boolean = false
+  @Input() items: any[] = []
   @Input() submitted: boolean = true
 
   disabled: boolean = false
   currentValue: any
-
   private onChange!: Function
 
   constructor(@Self() @Optional() private control: NgControl) {
     this.control.valueAccessor = this;
   }
 
-  changeText($event: any): void {
-    this.onChange($event.target.value)
+  change(event: any): void {
+    event ? this.onChange(event[this.bindValue]) : this.onChange(event)
   }
 
   writeValue(value: any): void {

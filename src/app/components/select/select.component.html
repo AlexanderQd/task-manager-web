@@ -1,0 +1,10 @@
+<div class="">
+  <label class="mb0">
+    {{ labelTxt }}
+  </label>
+
+  <ng-select [items]="items" [placeholder]="placeholder" [multiple]="multiple" [selectableGroupAsModel]="false"
+    [closeOnSelect]="false" [bindLabel]="bindLabel" [bindValue]="bindValue" [class.is-invalid]="submitted && invalid"
+    (change)="change($event)" [closeOnSelect]="!multiple" [ngModel]="currentValue" [disabled]="disabled">
+  </ng-select>
+</div>
