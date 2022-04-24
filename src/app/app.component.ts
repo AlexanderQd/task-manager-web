@@ -26,7 +26,7 @@ export class AppComponent {
         this.authSvc.currentUser = user
       } else {
         localStorage.clear()
-        this.route.navigate(['/'])
+        this.route.navigate(['/home'])
       }
     } catch (e) {
       console.error(e)

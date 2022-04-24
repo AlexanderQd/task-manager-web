@@ -1,1 +1,22 @@
-<p>current-task-register works!</p>
+<div class="row">
+  <div class="col-10">
+    <input type="text" class="form-control" placeholder="Buscar o crear tarea" [(ngModel)]="task.name">
+  </div>
+
+  <div class="col-2" *ngIf="register">
+    <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon" (click)="stopRegister()">
+      <mat-icon>pause</mat-icon>
+    </button>
+  </div>
+
+  <div class="col-2" *ngIf="!register">
+    <button mat-fab color="primary" aria-label="Example icon button with a bookmark icon"
+      (click)="createOrUpdateTask()">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class="row" *ngIf="currentTime">
+  <p>{{currentTime}} Tiempo transcurrido</p>
+</div>

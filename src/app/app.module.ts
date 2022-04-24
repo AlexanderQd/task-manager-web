@@ -20,6 +20,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
+import {  MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ClientsComponent } from './pages/clients/clients.component';
 import { ClientsTableComponent } from './pages/clients/clients-table/clients-table.component';
@@ -51,7 +52,7 @@ import { CurrentTaskRegisterComponent } from './components/current-task-register
     MyTasksComponent,
     TasksTableComponent,
     TaskFormComponent,
-    CurrentTaskRegisterComponent
+    CurrentTaskRegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,8 @@ import { CurrentTaskRegisterComponent } from './components/current-task-register
     NgSelectModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatIconModule
   ],
   providers: [
     {

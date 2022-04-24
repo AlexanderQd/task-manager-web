@@ -28,7 +28,7 @@ export class TasksTableComponent implements OnInit {
   }
 
   startRegister(task: TaskModel): void {
-    if (!this.interval) {
+    if (!this.interval && task.id) {
       const register: RegisterModel = {
         task_id: task.id,
         user_id: this.authSvc.currentUser?.id,

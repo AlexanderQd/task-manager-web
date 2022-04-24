@@ -3,5 +3,5 @@ export interface RegisterModel {
   task_id: number
   user_id: number
   starts_at: string
-  ends_at?: number
+  ends_at?: string
 }

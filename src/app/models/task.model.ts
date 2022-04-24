@@ -2,13 +2,14 @@ import { ProjectModel } from "./project.model"
 import { RegisterModel } from "./register.model"
 
 export interface TaskModel {
-  id: number
+  id?: number
   name: string
-  finished: boolean
-  project_id: number
-  starts_at: Date,
-  ends_at: Date,
-  status_cd: number
-  registers: RegisterModel[]
-  project: Pick<ProjectModel, 'id' | 'title'>
+  finished?: boolean
+  project_id?: number
+  starts_at?: Date,
+  ends_at?: Date,
+  status_cd?: number
+  registers?: RegisterModel[]
+  project?: Pick<ProjectModel, 'id' | 'title'>
+  tasks_registers_attributes?: {starts_at: string, user_id?: number}
 }
