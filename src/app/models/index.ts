@@ -1,1 +1,5 @@
 export * from './user.model'
+export * from './client.model'
+export * from './project.model'
+export * from './register.model'
+export * from './task.model'

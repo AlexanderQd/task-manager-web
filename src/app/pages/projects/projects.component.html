@@ -1,1 +1,3 @@
-<p>projects works!</p>
+<button mat-raised-button color="primary" (click)="openForm()">Nuevo proyecto</button>
+<app-projects-table [projects]="projects" (editProject)="openForm($event)"></app-projects-table>
+<app-project-form [users]="users" [clients]="clients" (projectResult)="insertProject($event)"></app-project-form>

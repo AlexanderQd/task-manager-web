@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CompaniesComponent } from './pages/companies/companies.component';
+import { ClientsComponent } from './pages/clients/clients.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { MyTasksComponent } from './pages/my-tasks/my-tasks.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { UsersComponent } from './pages/users/users.component';
@@ -26,8 +27,8 @@ const routes: Routes = [
     component: ProjectsComponent
   },
   {
-    path: 'companies',
-    component: CompaniesComponent
+    path: 'clients',
+    component: ClientsComponent
   },
   {
     path: 'users',
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'reports',
     component: ReportsComponent
+  },
+  {
+    path: 'my_tasks',
+    component: MyTasksComponent
   }
 ];
 

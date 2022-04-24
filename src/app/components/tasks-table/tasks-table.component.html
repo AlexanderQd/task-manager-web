@@ -1,0 +1,40 @@
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Título</th>
+      <th>Proyecto</th>
+      <th>Estado</th>
+      <th>Accion</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.id }}</td>
+      <td>{{ task.name }}</td>
+      <td>{{ task.project ? task.project.title : 'No asignado.' }}</td>
+      <td>Pendiente de desarrollar</td>
+      <td>
+        <div class="col-12">
+          <div class="nav-item dropdown" ngbDropdown>
+            <a class="btn btn-medium-state-blue btn-sm" ngbDropdownToggle>
+              Selecciona acción
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="admin" ngbDropdownMenu>
+              <button class="btn btn-sm dropdown-item" (click)="setTask(task)">
+                <i class="fa fa-edit text-primary"></i>
+                Editar
+              </button>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="startRegister(task)">Play</button>
+        {{ this.currentTime}}
+      </td>
+    </tr>
+  </tbody>
+</table>

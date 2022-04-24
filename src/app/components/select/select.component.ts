@@ -24,7 +24,11 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   change(event: any): void {
-    event ? this.onChange(event[this.bindValue]) : this.onChange(event)
+    if (this.multiple) {
+      event ? this.onChange(event.map((item: any) => item[this.bindValue])) : this.onChange(event)
+    } else {
+      event ? this.onChange(event[this.bindValue]) : this.onChange(event)
+    }
   }
 
   writeValue(value: any): void {

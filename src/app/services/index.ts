@@ -1,3 +1,7 @@
 export * from './auth.service'
 export * from './user.service'
 export * from './modal.service'
+export * from './client.service'
+export * from './project.service'
+export * from './task.service'
+export * from './register.service'

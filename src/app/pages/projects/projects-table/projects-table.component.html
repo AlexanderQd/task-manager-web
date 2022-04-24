@@ -1,0 +1,38 @@
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Título</th>
+      <th>Cliente</th>
+      <th>Usuarios asignados</th>
+      <th>Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projects">
+      <td>{{project.id}}</td>
+      <td>{{project.title}}</td>
+      <td>{{ project.client ? project.client?.name : 'No asignado.'}}</td>
+      <td>
+        <div class="row" *ngFor="let user of project.users">{{user.name}}</div>
+        <div *ngIf="!project.users || project.users.length === 0">No asignados.</div>
+      </td>
+      <td>
+        <div class="col-12">
+          <div class="nav-item dropdown" ngbDropdown>
+            <a class="btn btn-medium-state-blue btn-sm" ngbDropdownToggle>
+              Selecciona acción
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="admin" ngbDropdownMenu>
+              <button class="btn btn-sm dropdown-item" (click)="setProject(project)">
+                <i class="fa fa-edit text-primary"></i>
+                Editar
+              </button>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

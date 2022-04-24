@@ -1,0 +1,3 @@
+<button mat-raised-button color="primary" (click)="openForm()">Nueva tarea</button>
+<app-tasks-table [tasks]="tasks" (editTask)="openForm($event)"></app-tasks-table>
+<app-task-form [projects]="projects" [tasksStatus]="taskStatus" (taskResult)="insertTask($event)"></app-task-form>

@@ -1,0 +1,31 @@
+<ng-template #taskModal let-modal let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">
+      {{ id ? "Actualizar tarea" : "Crear tarea" }}
+    </h4>
+
+    <button type="button" class="close" aria-label="Close" (click)="d('close-supplier-modal')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <section class="supplier-form">
+    <div class="modal-body" (keydown.enter)="onSubmit()">
+      <form [formGroup]="form" novalidate *ngIf="form">
+        <div class="row">
+          <app-input class="col" labelTxt="Nombre" formControlName="name" [submitted]="submitted"
+            [labelStyle]="{ 'color': 'black'}"></app-input>
+          <app-select formControlName="project_id" [multiple]="false" labelTxt="Projecto" placeholder="Projecto"
+            bindValue="id" bindLabel="title" [items]="projects" [submitted]="submitted"></app-select>
+          <app-select formControlName="status_cd" [multiple]="false" labelTxt="Estado" placeholder="Estado"
+            bindValue="id" bindLabel="name" [items]="tasksStatus" [submitted]="submitted"></app-select>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="modal-footer">
+    <button class="m-2" mat-raised-button color="primary" (click)="onSubmit()">Guardar</button>
+    <button mat-raised-button color="warn" (click)="d('close-supplier-modal')"> Cancelar</button>
+  </div>
+</ng-template>

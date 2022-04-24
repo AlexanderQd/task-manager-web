@@ -1,0 +1,38 @@
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clients">
+      <td>{{client.id}}</td>
+      <td>{{client.name}}</td>
+      <td>
+        <div class="col-12">
+          <div class="nav-item dropdown" ngbDropdown>
+            <a class="btn btn-medium-state-blue btn-sm" ngbDropdownToggle>
+              Selecciona acción
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="admin" ngbDropdownMenu>
+              <button class="btn btn-sm dropdown-item" (click)="setClient(client)">
+                <i class="fa fa-edit text-primary"></i>
+                Editar
+              </button>
+
+              <!-- <button class="btn btn-sm dropdown-item" (click)="toggleActive(client)">
+                <i class="fa fa-trash text-danger"></i>
+                {{ client.active ? 'Desactivar' : 'Activar' }}
+              </button> -->
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

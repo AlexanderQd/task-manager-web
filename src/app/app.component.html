@@ -5,12 +5,12 @@
       <ul>
           <li><a routerLink="/home"><i class="fas fa-home"></i>Inicio</a></li>
           <li><a routerLink="/projects"><i class="fas fa-user"></i>Proyectos</a></li>
-          <li><a routerLink=""><i class="fas fa-address-book"></i>Mis tareas</a></li>
+          <li><a routerLink="/my_tasks"><i class="fas fa-address-book"></i>Mis tareas</a></li> <!-- TODO: añadir esta pagina -->
           <li><a routerLink="/users"><i class="fas fa-address-card"></i>Usuarios</a></li>
-          <li><a routerLink="/companies"><i class="fas fa-project-diagram"></i>Clientes</a></li>
+          <li><a routerLink="/clients"><i class="fas fa-project-diagram"></i>Clientes</a></li>
           <li><a routerLink="/reports"><i class="fas fa-blog"></i>Reportes</a></li>
-       
-      </ul> 
+
+      </ul>
       <div class="social_media">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="main_content">
-      <div class="header" *ngIf="currentUser">Bienvenido</div>  
+      <div class="header" *ngIf="currentUser">Bienvenido</div>
       <div class="info">
         <router-outlet></router-outlet>
     </div>

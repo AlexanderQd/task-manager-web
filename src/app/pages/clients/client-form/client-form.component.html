@@ -1,0 +1,26 @@
+<ng-template #clientModal let-modal let-d="dismiss" >
+  <div class="modal-header">
+    <h4 class="modal-title">
+      {{ id ? "Actualizar cliente" : "Crear cliente" }}
+    </h4>
+
+    <button type="button" class="close" aria-label="Close" (click)="d('close-supplier-modal')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <section class="supplier-form">
+    <div class="modal-body" (keydown.enter)="onSubmit()">
+      <form [formGroup]="form" novalidate *ngIf="form">
+        <div class="row">
+          <app-input class="col" labelTxt="Nombre" formControlName="name" [submitted]="submitted" [labelStyle]="{ 'color': 'black'}"></app-input>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div class="modal-footer">
+    <button class="m-2" mat-raised-button color="primary" (click)="onSubmit()">Guardar</button>
+    <button mat-raised-button color="warn" (click)="d('close-supplier-modal')"> Cancelar</button>
+  </div>
+</ng-template>

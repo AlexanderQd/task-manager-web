@@ -1,0 +1,3 @@
+<button mat-raised-button color="primary" (click)="openForm()">Nuevo cliente</button>
+<app-clients-table [clients]="clients" (editClient)="openForm($event)"></app-clients-table>
+<app-client-form (clientResult)="insertClient($event)"></app-client-form>
