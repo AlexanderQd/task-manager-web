@@ -29,6 +29,7 @@ import { ProjectsTableComponent } from './pages/projects/projects-table/projects
 import { MyTasksComponent } from './pages/my-tasks/my-tasks.component';
 import { TasksTableComponent } from './components/tasks-table/tasks-table.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
+import { CurrentTaskRegisterComponent } from './components/current-task-register/current-task-register.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TaskFormComponent } from './components/task-form/task-form.component';
     ProjectsTableComponent,
     MyTasksComponent,
     TasksTableComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    CurrentTaskRegisterComponent
   ],
   imports: [
     BrowserModule,

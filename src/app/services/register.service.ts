@@ -12,6 +12,16 @@ export class RegisterService {
 
   constructor(private http: HttpClient) { }
 
+  getCurrent(userId: number): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.base, { params: { 'q[user_id_eq]': userId }})
+        .subscribe({
+          next: (res: any) => res.success ? resolve(res) : reject(res),
+          error: err => reject(err) 
+        })
+    })
+  }
+
   create(register: RegisterModel): Promise<any> {
     return new Promise((resolve, reject) => {
       this.http.post(this.base, { register })
